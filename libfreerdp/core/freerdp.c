@@ -496,9 +496,10 @@ BOOL freerdp_context_new(freerdp* instance)
 
 	update_register_client_callbacks(rdp->update);
 
-	IFCALLRET(instance->ContextNew, ret, instance, instance->context);
+	//IFCALLRET(instance->ContextNew, ret, instance, instance->context);
+	IFCALL(instance->ContextNew, instance, instance->context);
 
-	if (ret)
+	//if (ret)
 		return TRUE;
 
 out_error_graphics_new:
